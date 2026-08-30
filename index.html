@@ -275,6 +275,98 @@
   .company-row dd{margin:0;font-size:13.5px;color:var(--ink-2);}
   @media (max-width:560px){.company-row{grid-template-columns:1fr;gap:6px;}}
 
+  /* ---------- achievements ---------- */
+  .achieve-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .achieve-card{background:var(--white);padding:28px 26px;display:flex;gap:16px;align-items:flex-start;}
+  .achieve-card .a-icon{flex:none;width:34px;height:34px;border-radius:50%;border:1px solid var(--gold);color:var(--gold);
+    display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700;font-size:14px;}
+  .achieve-card p{margin:0;font-size:13.5px;color:var(--ink-2);line-height:1.85;}
+  @media (max-width:760px){.achieve-grid{grid-template-columns:1fr;}}
+
+  /* ---------- pricing ladder ---------- */
+  .ladder{display:flex;align-items:center;flex-wrap:wrap;gap:0;margin-bottom:48px;}
+  .ladder-step{
+    flex:1 1 140px;text-align:center;padding:16px 10px;border:1px solid var(--line);background:var(--white);
+    font-size:12.5px;color:var(--ink-2);font-weight:700;
+  }
+  .ladder-step .ls-sub{display:block;font-weight:400;color:var(--muted);font-size:11px;margin-top:4px;}
+  .ladder-arrow{flex:none;padding:0 10px;color:var(--gold);font-size:16px;}
+  @media (max-width:700px){
+    .ladder{flex-direction:column;width:100%;}
+    .ladder-arrow{transform:rotate(90deg);padding:4px 0;}
+    .ladder-step{width:100%;}
+  }
+
+  /* ---------- checklist ---------- */
+  .checklist-card{
+    max-width:720px;background:var(--white);border:1px solid var(--line);border-radius:2px;padding:40px 36px;
+  }
+  .checklist-card p.lead{font-size:13.5px;color:var(--muted);margin-bottom:22px;}
+  .check-item{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-top:1px dashed var(--line);}
+  .check-item:first-of-type{border-top:none;}
+  .check-item input[type="checkbox"]{margin-top:3px;width:16px;height:16px;accent-color:var(--gold);flex:none;}
+  .check-item label{font-size:13.5px;color:var(--ink-2);line-height:1.7;}
+  .check-result{
+    margin-top:24px;padding:18px 20px;border-radius:2px;font-size:13.5px;line-height:1.85;
+    background:var(--paper-alt);border:1px solid var(--line);color:var(--ink-2);
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq-list{max-width:760px;}
+  .faq-item{border-top:1px solid var(--line);}
+  .faq-item:last-child{border-bottom:1px solid var(--line);}
+  .faq-q{
+    width:100%;text-align:left;background:none;border:none;cursor:pointer;
+    padding:20px 30px 20px 0;font-size:14px;font-weight:700;color:var(--ink);
+    display:flex;justify-content:space-between;align-items:center;font-family:var(--sans);
+    position:relative;
+  }
+  .faq-q::after{content:'+';position:absolute;right:0;color:var(--gold);font-size:18px;font-weight:400;}
+  .faq-item.open .faq-q::after{content:'−';}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .3s ease;}
+  .faq-item.open .faq-a{max-height:400px;}
+  .faq-a p{margin:0 0 20px;font-size:13.5px;color:var(--muted);line-height:1.9;max-width:640px;}
+
+  /* ---------- resource download ---------- */
+  .resource-card{
+    display:flex;align-items:center;gap:22px;background:var(--white);border:1px solid var(--line);
+    border-radius:2px;padding:26px 28px;max-width:640px;
+  }
+  .resource-card .r-icon{
+    flex:none;width:48px;height:48px;border-radius:50%;background:var(--paper-alt);
+    display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:20px;font-family:var(--serif);
+  }
+  .resource-card .r-text h4{font-size:14.5px;font-weight:700;color:var(--ink);}
+  .resource-card .r-text p{margin:6px 0 0;font-size:12.5px;color:var(--muted);}
+  .resource-card .r-btn{
+    margin-left:auto;flex:none;background:var(--ink);color:#fff;text-decoration:none;font-size:12.5px;
+    font-weight:700;padding:11px 20px;border-radius:2px;white-space:nowrap;
+  }
+  @media (max-width:560px){
+    .resource-card{flex-wrap:wrap;}
+    .resource-card .r-btn{margin-left:0;width:100%;text-align:center;}
+  }
+
+  .mini-note{max-width:640px;font-size:12.5px;color:var(--muted);margin-top:20px;line-height:1.9;}
+  .mini-note b{color:var(--ink-2);}
+
+  /* ---------- sticky mobile CTA ---------- */
+  .sticky-cta{
+    display:none;position:fixed;left:0;right:0;bottom:0;z-index:200;
+    background:var(--ink);padding:12px 16px;
+    box-shadow:0 -4px 16px rgba(0,0,0,.15);
+  }
+  .sticky-cta a{
+    display:block;text-align:center;background:var(--gold);color:#fff;text-decoration:none;
+    padding:13px;border-radius:2px;font-size:14px;font-weight:700;
+  }
+  @media (max-width:880px){.sticky-cta{display:block;}}
+
+  /* ---------- legal ---------- */
+  .legal-block{max-width:760px;font-size:12.5px;color:var(--muted);line-height:1.95;}
+  .legal-block h3{font-size:14px;color:var(--ink);margin:22px 0 8px;}
+  .legal-block h3:first-child{margin-top:0;}
+
   footer{background:var(--ink);color:rgba(255,255,255,.6);padding:44px 0 26px;font-size:12.5px;}
   .footer-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;padding-bottom:26px;border-bottom:1px solid rgba(255,255,255,.14);}
   .footer-logo{color:#fff;font-weight:700;font-size:14.5px;}
@@ -295,13 +387,16 @@
 <body>
 <a class="skip-link" href="#main">本文へスキップ</a>
 
+<div class="sticky-cta"><a href="#contact">まずは無料相談する</a></div>
+
 <header id="site-header">
   <div class="nav-inner">
     <a href="#top" class="logo">フィールネクスト<span class="logo-sub">FEEL NEXT, LLC.</span></a>
     <nav class="links" aria-label="主要ナビゲーション">
+      <a href="#achievements">実績</a>
       <a href="#services">対応業務</a>
       <a href="#pricing">料金</a>
-      <a href="#flow">ご依頼の流れ</a>
+      <a href="#faq">よくある質問</a>
       <a href="#farmer">農家の方へ</a>
       <a href="#company">会社概要</a>
     </nav>
@@ -350,6 +445,72 @@
         <div class="need-card">商品や市場について調査したい</div>
         <div class="need-card">地域産品を事業に活用したい</div>
         <div class="need-card">複数の生産者による安定的な供給体制を構築したい</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Track Record</span>
+        <h2>実績（例）</h2>
+        <p>これまでに対応してきた内容の一部です。品目・業態は多岐にわたります。</p>
+      </div>
+      <div class="achieve-grid reveal">
+        <div class="achieve-card">
+          <span class="a-icon">01</span>
+          <p>県内外の仲卸・スーパーマーケットへの、レタス・ミニトマト・にんじん・果物類などの流通の組み立て</p>
+        </div>
+        <div class="achieve-card">
+          <span class="a-icon">02</span>
+          <p>県外の産直コーナーにおける販売・流通支援</p>
+        </div>
+        <div class="achieve-card">
+          <span class="a-icon">03</span>
+          <p>地域医療施設・ホテルからの栽培委託への対応</p>
+        </div>
+        <div class="achieve-card">
+          <span class="a-icon">04</span>
+          <p>試験栽培品目の導入支援</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section style="background:var(--white);" id="why-us">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Why Us</span>
+        <h2>マッチングサイトにはない強み</h2>
+        <p>仕入れ・販路のマッチングサービスは他にも存在します。私たちは「登録して終わり」ではなく、人が実際に動く部分に価値があると考えています。</p>
+      </div>
+      <div class="achieve-grid reveal">
+        <div class="achieve-card">
+          <span class="a-icon">有</span>
+          <p><b style="color:var(--ink);">有人対応</b><br>プラットフォームへの登録だけでなく、実際に人が確認・調整・交渉まで行います。</p>
+        </div>
+        <div class="achieve-card">
+          <span class="a-icon">地</span>
+          <p><b style="color:var(--ink);">地域が既に商圏</b><br>長野県東信地域（佐久・小諸・上田）にすでに営業基盤があります。</p>
+        </div>
+        <div class="achieve-card">
+          <span class="a-icon">20</span>
+          <p><b style="color:var(--ink);">20年の生産者ネットワーク</b><br>肥料・農業資材の販売を通じて培った、生産者情報の蓄積があります。</p>
+        </div>
+        <div class="achieve-card">
+          <span class="a-icon">試</span>
+          <p><b style="color:var(--ink);">試験栽培導入サポート</b><br>自社栽培・試験栽培の経験を活かし、新品目導入のご相談にも対応します。</p>
+        </div>
+        <div class="achieve-card">
+          <span class="a-icon">有機</span>
+          <p><b style="color:var(--ink);">減農薬・有機栽培にも精通</b><br>栽培方法にこだわりのある取引先とのやり取りにも対応します。</p>
+        </div>
+        <div class="achieve-card">
+          <span class="a-icon">小</span>
+          <p><b style="color:var(--ink);">小ロットからご相談可</b><br>個人経営の飲食店など、小規模なご依頼もまずはご相談ください（ロットは要相談）。</p>
+        </div>
       </div>
     </div>
   </section>
@@ -474,6 +635,16 @@
         <p>料金は、業務内容・難易度・対応範囲・期間・工数等を踏まえて設定します。業務開始時には、ヒアリング・条件整理・初期調査・関係先への初動対応等に充てる準備金を、別途申し受けます。</p>
       </div>
 
+      <div class="ladder reveal">
+        <div class="ladder-step">お試しプラン<span class="ls-sub">まず小さく試す</span></div>
+        <span class="ladder-arrow">→</span>
+        <div class="ladder-step">スポット調査<span class="ls-sub">単発の課題を解決</span></div>
+        <span class="ladder-arrow">→</span>
+        <div class="ladder-step">月額継続支援<span class="ls-sub">外部担当として伴走</span></div>
+        <span class="ladder-arrow">→</span>
+        <div class="ladder-step">プロジェクト型<span class="ls-sub">産地形成まで</span></div>
+      </div>
+
       <div class="price-grid reveal">
         <div class="price-card">
           <span class="price-plan">PLAN 01</span>
@@ -515,6 +686,13 @@
           <p class="desc">複数の生産者・企業・地域を巻き込んだ供給体制の構築を支援します。案件内容・期間・関係者数・工数等に応じた個別見積りとなります。</p>
           <p class="lead-time">業務開始時には、初期設計・関係者整理・調査・調整準備等にかかる準備金を別途申し受けます。</p>
         </div>
+        <div class="price-card highlight">
+          <span class="price-plan">NATIONWIDE</span>
+          <h4>月額顧問契約（全国対応）</h4>
+          <div class="price-value">月額¥200,000<small>〜</small></div>
+          <p class="desc">長野県以外の産地・仕入れ先についても、オンライン中心の顧問契約として対応します。電話・オンライン商談・書類確認によるリサーチを主軸に、必要な場合のみ現地訪問を実費でご相談します。</p>
+          <p class="lead-time">契約期間：1か月〜／全国の産地・仕入れ先に関する継続的なご相談窓口としてご利用いただけます。</p>
+        </div>
       </div>
 
       <div class="price-card reveal" style="margin-top:28px;max-width:520px;">
@@ -545,6 +723,51 @@
       <div class="pricing-note reveal">
         準備金は、初期ヒアリング、条件整理、調査設計、候補先の探索、関係先への初動対応等の実施に充当します。商品の購入代金、サンプル代、送料、検査費、出張費その他の実費は、準備金には含まれません。<br><br>
         <b>出張・交通費等について：</b>業務に伴う出張、現地訪問、関係先への同行、打ち合わせ等にかかる交通費・宿泊費・駐車場代・高速道路料金その他の実費は、業務料金とは別にご請求します。出張が必要となる場合は、可能な限り事前に内容と概算費用をご案内します。
+      </div>
+
+      <div class="mini-note reveal">
+        <b>対応可能社数について：</b>一人で対応しているため、月間で継続的にお受けできる件数には限りがあります。ご継続支援・全国対応の月額顧問契約をご検討の場合は、お早めにご相談ください。<br><br>
+        <b>ご紹介について：</b>既にお取引のある企業様・生産者様からのご紹介の場合、初回のヒアリング内容を踏まえてスムーズにご案内できます。ご紹介はお問い合わせ時にその旨をお知らせください。
+      </div>
+    </div>
+  </section>
+
+  <!-- CHECKLIST -->
+  <section style="background:var(--white);" id="checklist">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Self Check</span>
+        <h2>こんな状態なら、ご相談ください</h2>
+      </div>
+      <div class="checklist-card reveal">
+        <p class="lead">あてはまるものにチェックしてみてください。1つでも当てはまれば、まずはお気軽にご相談ください。</p>
+        <div id="check-list">
+          <div class="check-item">
+            <input type="checkbox" id="chk1"><label for="chk1">仕入れ先・販売先を探しているが、社内に十分なリソースがない</label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="chk2"><label for="chk2">長野県産品を扱いたいが、どこに相談すればよいか分からない</label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="chk3"><label for="chk3">市場・商品について調べたいが、時間や専門知識が足りない</label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="chk4"><label for="chk4">複数の生産者から安定的に仕入れる体制を作りたい</label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="chk5"><label for="chk5">小ロットでの取引に対応してくれる相手が見つからない</label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="chk6"><label for="chk6">減農薬・有機栽培などにこだわった食材を探している</label>
+          </div>
+          <div class="check-item">
+            <input type="checkbox" id="chk7"><label for="chk7">条件はまだ固まっていないが、まず相談だけしてみたい</label>
+          </div>
+        </div>
+        <div class="check-result" id="check-result">チェックを入れると、目安のご案内がここに表示されます。</div>
+        <div class="hero-cta-row" style="margin-top:22px;">
+          <a href="#contact" class="btn-primary">この内容で相談する</a>
+        </div>
       </div>
     </div>
   </section>
@@ -593,6 +816,42 @@
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">FAQ</span>
+        <h2>よくあるご質問</h2>
+      </div>
+      <div class="faq-list reveal" id="faq-list">
+        <div class="faq-item">
+          <button class="faq-q">初回のご相談・ヒアリングは無料ですか？</button>
+          <div class="faq-a"><p>はい、初回のお問い合わせ・ヒアリングは無料です。その内容を踏まえて、対応方針とお見積りをご提案します。業務としてご依頼いただく段階から、準備金・料金が発生します。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">準委任契約と業務委託契約の違いが分かりません。</button>
+          <div class="faq-a"><p>業務委託契約は「決まった成果物（報告書やリストなど）」の納品を約束する契約です。準委任契約は「調査や営業活動そのもの」を委託いただく契約で、継続的な外部担当業務に向いています。ご依頼内容に応じて、初回ヒアリング後にどちらが適しているかご提案します。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">長野県外の企業ですが、依頼できますか？</button>
+          <div class="faq-a"><p>対応可能です。オンラインで完結する調査・営業支援であれば地域外からのご依頼にも対応しており、全国対応の月額顧問契約もご用意しています。現地訪問が必要な場合は、交通費・宿泊費等の実費を別途ご請求します。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">小さな個人店ですが、対応してもらえますか？</button>
+          <div class="faq-a"><p>個人経営の飲食店など、小ロットのご依頼もまずはご相談ください。ロット・対応範囲は内容に応じてご相談のうえ決めさせていただきます。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">取引の成立や数量・価格は保証されますか？</button>
+          <div class="faq-a"><p>本サービスは調査・候補先探索・問い合わせ・営業支援・仕入れ支援・産地形成支援を行うものであり、商品の確保、取引成立、価格、数量、品質、納期、売上等を保証するものではありません。実際の取引条件・契約内容は関係者間でご確認いただきます。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q">条件がまだ固まっていなくても相談できますか？</button>
+          <div class="faq-a"><p>問題ありません。品目・数量・地域・予算などが未確定の段階でも、現状を伺いながら一緒に整理していきますので、お気軽にご相談ください。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- PAYMENT TERMS -->
   <section class="tight" id="payment">
     <div class="wrap">
@@ -619,9 +878,9 @@
       <div class="reveal">
         <span class="eyebrow">Area</span>
         <h3>対応エリア</h3>
-        <p>長野県東信地域を中心に対応します。佐久・小諸・上田周辺を中心に、長野県内の他地域にも対応します。オンラインで実施可能な調査・営業支援については、地域外からのご依頼もご相談ください。現地訪問・出張対応が必要な場合は、交通費・宿泊費等の実費を別途ご請求します。</p>
+        <p>長野県東信地域を中心に、現地対応します。佐久・小諸・上田周辺を中心に、長野県内の他地域にも対応します。<b>長野県外・全国の産地についても、オンライン中心の月額顧問契約という形で対応可能です。</b>現地訪問・出張対応が必要な場合は、交通費・宿泊費等の実費を別途ご請求します。</p>
         <div class="tag-row">
-          <span class="tag">佐久市</span><span class="tag">小諸市</span><span class="tag">上田市</span><span class="tag">長野県内その他</span><span class="tag">オンライン対応可</span>
+          <span class="tag">佐久市</span><span class="tag">小諸市</span><span class="tag">上田市</span><span class="tag">長野県内その他</span><span class="tag">全国対応（オンライン顧問）</span>
         </div>
       </div>
       <div class="reveal reveal-delay-1">
@@ -672,6 +931,25 @@
           本サービスは、調査・候補先探索・問い合わせ・営業支援・仕入れ支援・産地形成支援を行うものです。商品の確保、取引成立、価格、数量、品質、納期、売上等を保証するものではありません。実際の取引条件・契約内容については、関係者間でご確認ください。<br><br>
           料金・納期・準備金は、内容を確認したうえで事前にお見積りします。出張・現地訪問等に伴う交通費・宿泊費・駐車場代・高速道路料金その他の実費は、業務料金とは別にご請求します。
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESOURCE DOWNLOAD -->
+  <section class="tight" style="background:var(--white);" id="resource">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Download</span>
+        <h2>サービス資料のダウンロード</h2>
+        <p>対応業務・契約形態・料金プラン・実績をまとめた資料です。社内共有用にご利用ください。</p>
+      </div>
+      <div class="resource-card reveal">
+        <span class="r-icon">PDF</span>
+        <div class="r-text">
+          <h4>サービス概要資料（PDF）</h4>
+          <p>営業・仕入れ・販路開拓・産地形成支援　サービス資料</p>
+        </div>
+        <a href="service-overview.pdf" class="r-btn" download>資料をダウンロード</a>
       </div>
     </div>
   </section>
@@ -777,6 +1055,46 @@
     </div>
   </section>
 
+  <!-- LEGAL -->
+  <section class="tight" style="background:var(--white);" id="privacy">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Legal</span>
+        <h2>プライバシーポリシー</h2>
+      </div>
+      <div class="legal-block reveal">
+        <p>合同会社フィールネクスト（以下「当社」）は、お問い合わせフォームを通じて取得する個人情報（お名前・メールアドレス・会社名・お問い合わせ内容等）を、以下の目的の範囲内で利用します。</p>
+        <h3>利用目的</h3>
+        <p>お問い合わせへの回答、業務のご提案・お見積りのご案内、契約締結後の業務連絡のために利用します。</p>
+        <h3>第三者提供について</h3>
+        <p>法令に基づく場合を除き、ご本人の同意なく個人情報を第三者に提供することはありません。</p>
+        <h3>お問い合わせ窓口</h3>
+        <p>個人情報の取り扱いに関するお問い合わせは、feelnext.llc@gmail.com までご連絡ください。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight" id="tokushoho">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="eyebrow">Legal</span>
+        <h2>特定商取引法に基づく表記</h2>
+      </div>
+      <dl class="company-table reveal">
+        <div class="company-row"><dt>事業者名</dt><dd>合同会社フィールネクスト</dd></div>
+        <div class="company-row"><dt>代表者</dt><dd>小林大二</dd></div>
+        <div class="company-row"><dt>所在地</dt><dd>〒384-0092　長野県小諸市平原487-1</dd></div>
+        <div class="company-row"><dt>電話番号</dt><dd>0267-25-3561</dd></div>
+        <div class="company-row"><dt>メールアドレス</dt><dd>feelnext.llc@gmail.com</dd></div>
+        <div class="company-row"><dt>料金</dt><dd>各サービスページに記載の金額（税別）。案件内容に応じて個別にお見積りします。</dd></div>
+        <div class="company-row"><dt>お支払い方法</dt><dd>銀行振込</dd></div>
+        <div class="company-row"><dt>お支払い時期</dt><dd>契約形態に応じて、業務開始前・当月分前払い・分割請求等をご案内します。</dd></div>
+        <div class="company-row"><dt>役務の提供時期</dt><dd>ご契約内容に応じて個別にご案内します。</dd></div>
+        <div class="company-row"><dt>キャンセルについて</dt><dd>調査・営業活動を実施した後のキャンセルは、実施済みの業務内容に応じて費用をご請求します。</dd></div>
+      </dl>
+    </div>
+  </section>
+
 </main>
 
 <footer>
@@ -784,11 +1102,15 @@
     <div class="footer-top">
       <span class="footer-logo">合同会社フィールネクスト</span>
       <ul class="footer-links">
+        <li><a href="#achievements">実績</a></li>
         <li><a href="#services">対応業務</a></li>
         <li><a href="#pricing">料金</a></li>
         <li><a href="#flow">ご依頼の流れ</a></li>
+        <li><a href="#faq">よくある質問</a></li>
         <li><a href="#farmer">農家の方へ</a></li>
         <li><a href="#company">会社概要</a></li>
+        <li><a href="#privacy">プライバシーポリシー</a></li>
+        <li><a href="#tokushoho">特定商取引法に基づく表記</a></li>
         <li><a href="#contact">お問い合わせ</a></li>
         <li><a href="https://www.facebook.com/share/1JuCpkhcMb/" target="_blank" rel="noopener noreferrer">Facebook</a></li>
         <li><a href="https://www.instagram.com/feel.next/" target="_blank" rel="noopener noreferrer">Instagram</a></li>
@@ -843,6 +1165,34 @@
         message,
       ].join('\n');
       window.location.href = `mailto:feelnext.llc@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  }
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item=>{
+    const q = item.querySelector('.faq-q');
+    q.addEventListener('click', ()=>{
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(o=>{ if(o!==item) o.classList.remove('open'); });
+      item.classList.toggle('open', !isOpen);
+    });
+  });
+
+  // Checklist result
+  const checkList = document.getElementById('check-list');
+  const checkResult = document.getElementById('check-result');
+  if(checkList){
+    checkList.addEventListener('change', ()=>{
+      const checked = checkList.querySelectorAll('input[type="checkbox"]:checked').length;
+      if(checked === 0){
+        checkResult.textContent = 'チェックを入れると、目安のご案内がここに表示されます。';
+      } else if(checked <= 2){
+        checkResult.textContent = 'まずはお試しプラン、またはスポット調査でのご相談がおすすめです。';
+      } else if(checked <= 4){
+        checkResult.textContent = '複数のお悩みがありそうです。仕入れ・販路開拓プラン、または月額の継続支援がおすすめです。';
+      } else {
+        checkResult.textContent = '複数の課題が重なっているようです。月額継続支援、または全国対応の月額顧問契約でのご相談をおすすめします。';
+      }
     });
   }
 </script>
